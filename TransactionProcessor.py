@@ -25,19 +25,21 @@ class TransactionProcessor:
         self.session = session
         self.trans_log = trans_log
 
-    def validate_transaction(self, account:BankAccount, transaction_type: str, amount: Decimal = None) -> bool:
+    def validate_transaction(self, account_holder: str, account_number: str, transaction_type: str, amount: Decimal) -> bool:
         """
         Perform common validations for a transaction:
           - Account existence and active status.
           - Ownership (if not admin).
           - For withdrawal, transfer, paybill: sufficient funds and session limit.
 
-        :param account: The account involved in the transaction.
+        :param account_holder: Account holder name
+        :param account_number: The account involved in the transaction.
         :param transaction_type: Type of transaction (e.g., 'paybill' or 'withdrawal').
         :param amount: Required for balance‑affecting transactions (optional)
 
         :return: True if all checks pass, False otherwise.
         """
+        account = self.find_current_user(account_number)
 
         # Checking existence, active, account is not another's and session is admin
         if not account:
@@ -46,7 +48,7 @@ class TransactionProcessor:
         if not account.is_active():
             UserInterface.display_error(f"Account is disabled. Please re-enable account to make transactions")
             return False
-        if not self.session.is_admin() and self.session.current_user != account.holder_name:
+        if account.holder_name != account_holder:
             UserInterface.display_error(f"Account does not belong to you")
             return False
 
@@ -71,17 +73,18 @@ class TransactionProcessor:
         """
         return self.account_manager.find_account(account_number)
 
-    def withdrawal(self, account_number: str, amount: Decimal) -> bool:
+    def withdrawal(self, account_holder: str, account_number: str, amount: Decimal) -> bool:
         """
         Process a withdrawal transaction.
 
+        :param account_holder: Account holder name
         :param account_number: The account to withdraw from.
         :param amount: Positive amount to withdraw.
         :return: True if the transaction succeeded, False otherwise.
         """
         # Finding account and validating
         account = self.find_current_user(account_number)
-        if not self.validate_transaction(account, 'Withdrawal', amount):
+        if not self.validate_transaction(account_holder, account_number, 'Withdrawal', amount):
             return False
 
         # Execute withdrawal
@@ -187,12 +190,12 @@ class TransactionProcessor:
 
         return True
 
-    def create(self, name: str, initial_balance: Decimal):
+    def create(self, account_holder: str, initial_balance: Decimal):
         """
         Process account creation (admin only). Does **not** add the account to the in‑memory repository; only logs a
         'create' transaction.
 
-        :param name: New account holder's name.
+        :param account_holder: New account holder's name.
         :param initial_balance: Starting balance (must be >= 0 and <= 99999.99).
         :return: The new account number if successful, otherwise None.
         """
@@ -201,7 +204,7 @@ class TransactionProcessor:
         new_account_num = self.account_manager.generate_new_account_number()
 
         # Log the transaction
-        trans_line = Transaction('05', name, new_account_num, initial_balance, '')
+        trans_line = Transaction('05', account_holder, new_account_num, initial_balance, '')
         self.trans_log.add_transaction(trans_line)
 
         # Display Success
@@ -209,12 +212,12 @@ class TransactionProcessor:
 
         return new_account_num
 
-    def delete(self, name: str, account_number: str) -> bool:
+    def delete(self, account_holder: str, account_number: str) -> bool:
         """
         Process account deletion (admin only). Removes the account from the in‑memory repository and logs a
         'delete' transaction.
 
-        :param name: Account holder's name (for verification).
+        :param account_holder: Account holder's name (for verification).
         :param account_number: The account to delete.
         :return: True if successful, False otherwise.
         """
@@ -228,7 +231,7 @@ class TransactionProcessor:
         self.account_manager.delete(account_number)
 
         # Log the transaction
-        trans_line = Transaction('06', name, account_number, Decimal('0.00'), '')
+        trans_line = Transaction('06', account_holder, account_number, Decimal('0.00'), '')
         self.trans_log.add_transaction(trans_line)
 
         # Display Success
@@ -236,11 +239,11 @@ class TransactionProcessor:
 
         return True
 
-    def disable(self, name: str, account_number: str) -> bool:
+    def disable(self, account_holder: str, account_number: str) -> bool:
         """
         Process account disable (admin only). Sets account status to 'D' and logs
 
-        :param name: Account holder's name (for verification).
+        :param account_holder: Account holder's name (for verification).
         :param account_number: The account to disable.
 
         :return: True if successful, False otherwise.
@@ -255,7 +258,7 @@ class TransactionProcessor:
         self.account_manager.disable_account(account_number)
 
         # Log the transaction
-        trans_line = Transaction('07', name, account_number, Decimal('0.00'), '')
+        trans_line = Transaction('07', account_holder, account_number, Decimal('0.00'), '')
         self.trans_log.add_transaction(trans_line)
 
         # Display Success

@@ -102,9 +102,6 @@ class BankingSystem:
 
         # All checks are good - login
         self.session.login(mode, user)
-        # self.ui.display_success(f"Successfully logged in. Mode: {mode}")
-        # if mode == 'standard':
-        # print(f"Logged in as: {user}")
 
         return True
 
@@ -121,16 +118,28 @@ class BankingSystem:
             self.session.logout()
             self.ui.display_success(f"Logout successful")
 
+
+    def _handle_account_name(self) -> str:
+        if self.session.is_admin():
+            account_holder = self.ui.prompt_account_name()
+        else:
+            account_holder = self.session.current_user
+        return account_holder
+
     # =========================TRANSACTION HANDLERS=========================
 
     def _handle_withdrawal(self):
         """Get withdrawal input and call transaction_processor.withdrawal()."""
+
+        # Getting account_holder name
+        account_holder = self._handle_account_name()
         account_number = self.ui.prompt_account_number()
         amount = self.ui.prompt_amount()
-        self.transaction_processor.withdrawal(account_number, amount)
+        self.transaction_processor.withdrawal(account_holder, account_number, amount)
 
     def _handle_transfer(self):
         """Get transfer input and call transaction_processor.transfer()."""
+        account_holder = self._handle_account_name()
         from_account = self.ui.prompt_account_number()
         to_account = self.ui.prompt_account_number()
         amount = self.ui.prompt_amount()
@@ -138,6 +147,7 @@ class BankingSystem:
 
     def _handle_paybill(self):
         """Get paybill input and call transaction_processor.paybill()."""
+        account_holder = self._handle_account_name()
         account_number = self.ui.prompt_account_number()
         company = self.ui.prompt_company_code()
         amount = self.ui.prompt_amount()
@@ -145,36 +155,37 @@ class BankingSystem:
 
     def _handle_deposit(self):
         """Get deposit input and call transaction_processor.deposit()."""
+        account_holder = self._handle_account_name()
         account_number = self.ui.prompt_account_number()
         amount = self.ui.prompt_amount()
         self.transaction_processor.deposit(account_number, amount)
 
     def _handle_create(self):
         """Get create input and call transaction_processor.create()."""
-        name = self.ui.prompt_account_name()
+        account_holder = self.ui.prompt_account_name()
         amount = self.ui.prompt_amount()
 
         # Constraint for account creation: initial balance cannot exceed 99999.99
         if amount > Decimal(99999.99):
             self.ui.display_error("Invalid amount")
             return
-        self.transaction_processor.create(name, amount)
+        self.transaction_processor.create(account_holder, amount)
 
     def _handle_delete(self):
         """Get delete input and call transaction_processor.delete()."""
-        name = self.ui.prompt_account_name()
+        account_holder = self.ui.prompt_account_name()
         account_number = self.ui.prompt_account_number()
-        self.transaction_processor.delete(name, account_number)
+        self.transaction_processor.delete(account_holder, account_number)
 
     def _handle_disable(self):
         """Get disable input and call transaction_processor.disable()."""
-        name = self.ui.prompt_account_name()
+        account_holder = self.ui.prompt_account_name()
         account_number = self.ui.prompt_account_number()
-        self.transaction_processor.disable(name, account_number)
+        self.transaction_processor.disable(account_holder, account_number)
 
     def _handle_changeplan(self):
         """Get changeplan input and call transaction_processor.changeplan()."""
-
+        account_holder = self.ui.prompt_account_name()
         account_number = self.ui.prompt_account_number()
         self.transaction_processor.change_plan(account_number)
 
