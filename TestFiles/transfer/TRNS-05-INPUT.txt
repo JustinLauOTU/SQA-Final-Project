@@ -1,5 +1,8 @@
 login
 standard
-Bob Smith
+Henry Smith
 transfer
-11111
+00001
+00002
+10
+logout

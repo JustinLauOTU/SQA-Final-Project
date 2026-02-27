@@ -143,7 +143,7 @@ class BankingSystem:
         from_account = self.ui.prompt_account_number()
         to_account = self.ui.prompt_account_number()
         amount = self.ui.prompt_amount()
-        self.transaction_processor.transfer(from_account, to_account, amount)
+        self.transaction_processor.transfer(account_holder, from_account, to_account, amount)
 
     def _handle_paybill(self):
         """Get paybill input and call transaction_processor.paybill()."""
@@ -151,7 +151,7 @@ class BankingSystem:
         account_number = self.ui.prompt_account_number()
         company = self.ui.prompt_company_code()
         amount = self.ui.prompt_amount()
-        self.transaction_processor.paybill(account_number, company, amount)
+        self.transaction_processor.paybill(account_holder, account_number, company, amount)
 
     def _handle_deposit(self):
         """Get deposit input and call transaction_processor.deposit()."""

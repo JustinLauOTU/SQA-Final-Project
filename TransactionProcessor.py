@@ -25,7 +25,7 @@ class TransactionProcessor:
         self.session = session
         self.trans_log = trans_log
 
-    def validate_transaction(self, account_holder: str, account_number: str, transaction_type: str, amount: Decimal = None) -> bool:
+    def validate_transaction(self, account_holder: str, account_number: str, transaction_type: str, amount: Decimal) -> bool:
         """
         Perform common validations for a transaction:
           - Account existence and active status.
@@ -57,7 +57,7 @@ class TransactionProcessor:
             return False
 
         # For transactions that have session limits
-        if transaction_type in ('withdrawal', 'transfer', 'paybill'):
+        if transaction_type in ('Withdrawal', 'Transfer', 'Paybill'):
             if amount is None:
                 UserInterface.display_error("Invalid amount")
                 return False
@@ -105,10 +105,11 @@ class TransactionProcessor:
         return True
 
 
-    def transfer(self, from_account_num: str, to_account_num: str, amount: Decimal) -> bool:
+    def transfer(self, account_holder: str, from_account_num: str, to_account_num: str, amount: Decimal) -> bool:
         """
         Process a transfer between two accounts.
 
+        :param account_holder: Account holder name
         :param from_account_num: Source account number.
         :param to_account_num: Destination account number.
         :param amount: Positive amount to transfer.
@@ -117,12 +118,15 @@ class TransactionProcessor:
         """
         # Finding source account and validating
         from_account = self.find_current_user(from_account_num)
-        if not self.validate_transaction(from_account, 'Transfer', amount):
+        if not self.validate_transaction(account_holder, from_account_num, 'Transfer', amount):
             return False
 
         # Finding destination account and validating
         to_account = self.find_current_user(to_account_num)
-        if not self.validate_transaction(to_account, 'Transfer', amount):
+        if to_account is None:
+            UserInterface.display_error("To Account not found")
+            return False
+        elif not self.validate_transaction(to_account.holder_name, to_account_num, ' ', amount):
             return False
 
         # Execute Transfer
@@ -139,10 +143,11 @@ class TransactionProcessor:
 
         return True
 
-    def paybill(self, account_number: str, company: str, amount: Decimal) -> bool:
+    def paybill(self, account_holder: str, account_number: str, company: str, amount: Decimal) -> bool:
         """
         Process a bill payment to an approved company.
 
+        :param account_holder: Account holder name
         :param account_number: The account to pay from.
         :param company: Company code (EC, CQ, FI).
         :param amount: Positive payment amount.
@@ -152,7 +157,7 @@ class TransactionProcessor:
 
         # Finding account and validating
         account = self.find_current_user(account_number)
-        if not self.validate_transaction(account, 'PayBill', amount):
+        if not self.validate_transaction(account_holder, account_number, 'PayBill', amount):
             return False
 
         # Execute paybill
@@ -160,7 +165,7 @@ class TransactionProcessor:
         self.session.session_limit('paybill', amount)
 
         # Log the transaction
-        trans_line = Transaction('03', account.holder_name, account_number,amount, company)
+        trans_line = Transaction('03', account_holder, account_number,amount, company)
         self.trans_log.add_transaction(trans_line)
 
         # Display Success
@@ -173,6 +178,7 @@ class TransactionProcessor:
         Process a deposit. According to requirements, deposit does **not** update the account balance immediately; it
         only logs the transaction (Still fixing that part).
 
+        :param account_holder: Account holder name
         :param account_number: The account to deposit into.
         :param amount: Positive deposit amount.
         :return:True if successful, False otherwise.
@@ -261,7 +267,7 @@ class TransactionProcessor:
 
         # Finding account and validating
         account = self.account_manager.find_account(account_number)
-        if not self.validate_transaction(account, 'Disable', None):
+        if not self.validate_transaction(account_holder, account_number, 'Disable', None):
             return False
 
         # Execute
@@ -333,9 +339,9 @@ class TransactionProcessor:
         """
 
         limits = {
-            'withdrawal': (Decimal('500.00'), self.session.withdrawn),
-            'transfer': (Decimal('1000.00'), self.session.transferred),
-            'paybill': (Decimal('2000.00'), self.session.paid),
+            'Withdrawal': (Decimal('500.00'), self.session.withdrawn),
+            'Transfer': (Decimal('1000.00'), self.session.transferred),
+            'Paybill': (Decimal('2000.00'), self.session.paid),
         }
 
         if not trans_type in limits:

@@ -1,8 +1,10 @@
 Welcome to the bank. Please type login: 
 Please enter a session type: 
-Enter the account name: 
+Enter account name: 
 Please enter a command. Commands are withdrawal, transfer, paybill, deposit, logout: 
-Enter the account number to transfer from: 
-Enter the account number to transfer to: 
+Enter account number: 
+Enter account number: 
 Enter amount: 
 Insufficient funds
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, logout: 
+Logout successful

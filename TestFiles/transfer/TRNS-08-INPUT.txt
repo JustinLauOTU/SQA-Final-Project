@@ -1,7 +1,9 @@
 login
-standard
-Bob Smith
+admin
 transfer
-12345
-33333
+Bob Smith
+00001
+00002
 ABC
+10002
+logout

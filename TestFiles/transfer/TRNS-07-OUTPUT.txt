@@ -1,6 +1,12 @@
 Welcome to the bank. Please type login: 
 Please enter a session type: 
-Enter the account name: 
+Enter account name: 
 Please enter a command. Commands are withdrawal, transfer, paybill, deposit, logout: 
-Enter the account number to transfer from: 
-Invalid amount
+Enter account number: 
+Enter account number: 
+Enter amount: 
+Error amount must be a valid positive number
+Enter amount: 
+Transfer successful
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, logout: 
+Logout successful

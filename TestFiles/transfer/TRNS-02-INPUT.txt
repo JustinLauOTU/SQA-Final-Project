@@ -2,7 +2,7 @@ login
 standard
 Bob Smith
 transfer
-12345
-33333
+00001
+00002
 100
 logout
