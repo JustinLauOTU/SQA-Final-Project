@@ -1,0 +1,3 @@
+Welcome to the bank. Please type login: 
+Please enter a session type: 
+Invalid session type

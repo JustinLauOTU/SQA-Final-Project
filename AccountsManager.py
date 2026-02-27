@@ -44,7 +44,7 @@ class AccountsManager:
         :return: BankAccount (if found) or None (otherwise).
         """
         for account in self.accounts.values():
-            if account.name == name:
+            if account.holder_name == name:
                 return account
         return None
 
@@ -107,5 +107,3 @@ class AccountsManager:
             return "00001"
         max_num = max(int(num) for num in self.accounts.keys())
         return f"{max_num + 1:05d}"
-
-

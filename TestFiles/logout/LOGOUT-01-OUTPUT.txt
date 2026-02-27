@@ -1,0 +1,3 @@
+Welcome to the bank. Please type login: 
+Invalid command
+Welcome to the bank. Please type login: 

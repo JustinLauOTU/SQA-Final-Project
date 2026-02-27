@@ -1,0 +1,6 @@
+login
+admin
+deposit
+Bob Smith
+12345
+-20

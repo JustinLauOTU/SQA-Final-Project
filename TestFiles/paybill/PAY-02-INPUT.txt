@@ -1,0 +1,7 @@
+login
+standard
+Bob Smith
+paybill
+12345
+FI
+2500

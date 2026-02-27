@@ -41,19 +41,19 @@ class TransactionProcessor:
 
         # Checking existence, active, account is not another's and session is admin
         if not account:
-            UserInterface.display_error("Account does not exist")
+            UserInterface.display_error("Account not found")
             return False
         if not account.is_active():
-            UserInterface.display_error(f"Account {account.holder_name} is disabled")
+            UserInterface.display_error(f"Account is disabled. Please re-enable account to make transactions")
             return False
         if not self.session.is_admin() and self.session.current_user != account.holder_name:
-            UserInterface.display_error(f"Account {account.holder_name} does not belong to you")
+            UserInterface.display_error(f"Account does not belong to you")
             return False
 
         # For transactions that have session limits
         if transaction_type in ('withdrawal', 'transfer', 'paybill'):
             if amount is None:
-                UserInterface.display_error("Amount must be provided")
+                UserInterface.display_error("Invalid amount")
                 return False
             if not self._sufficient_funds(account, amount):
                 return False
@@ -93,7 +93,7 @@ class TransactionProcessor:
         self.trans_log.add_transaction(trans_line)
 
         # Display Success
-        UserInterface.display_success(f"Withdrawal of ${amount:.2f} successful")
+        UserInterface.display_success(f"Withdrawal successful")
 
         return True
 
@@ -127,7 +127,7 @@ class TransactionProcessor:
         self.trans_log.add_transaction(trans_line)
 
         # Display Success
-        UserInterface.display_success(f"Transfer of ${amount:.2f} successful")
+        UserInterface.display_success(f"Transfer successful")
 
         return True
 
@@ -156,7 +156,7 @@ class TransactionProcessor:
         self.trans_log.add_transaction(trans_line)
 
         # Display Success
-        UserInterface.display_success(f"PayBill of ${amount:.2f} successful")
+        UserInterface.display_success(f"Bills paid successfully")
 
         return True
 
@@ -183,7 +183,7 @@ class TransactionProcessor:
         self.trans_log.add_transaction(trans_line)
 
         # Display Success
-        UserInterface.display_success(f"Deposit of ${amount:.2f} successful")
+        UserInterface.display_success(f"Deposit successful")
 
         return True
 
@@ -205,7 +205,7 @@ class TransactionProcessor:
         self.trans_log.add_transaction(trans_line)
 
         # Display Success
-        UserInterface.display_success(f"Creation of ${initial_balance:.2f} successful")
+        UserInterface.display_success(f"Account created successfully")
 
         return new_account_num
 
@@ -232,7 +232,7 @@ class TransactionProcessor:
         self.trans_log.add_transaction(trans_line)
 
         # Display Success
-        UserInterface.display_success(f"Delete of ${name:.2f} successful")
+        UserInterface.display_success(f"Account deleted successfully")
 
         return True
 
@@ -259,7 +259,7 @@ class TransactionProcessor:
         self.trans_log.add_transaction(trans_line)
 
         # Display Success
-        UserInterface.display_success(f"Disable successful")
+        UserInterface.display_success(f"Account disabled successfully")
 
         return True
 
@@ -288,7 +288,7 @@ class TransactionProcessor:
         self.trans_log.add_transaction(trans_line)
 
         # Display Success
-        UserInterface.display_success(f"Change plan to non-student is successful")
+        UserInterface.display_success(f"Account plan changed successfully")
 
         return True
 
@@ -336,11 +336,3 @@ class TransactionProcessor:
             return False
 
         return True
-
-
-
-
-
-
-
-

@@ -1,0 +1,6 @@
+login
+admin
+create
+Jason So
+00001
+ABC

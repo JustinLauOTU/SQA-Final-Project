@@ -1,0 +1,7 @@
+login
+admin
+withdrawal
+Bob Smith
+12345
+700
+logout

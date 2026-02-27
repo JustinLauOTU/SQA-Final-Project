@@ -1,0 +1,9 @@
+login
+standard
+Bob Smith
+transfer
+Bob Smith
+12345
+33333
+10000
+logout

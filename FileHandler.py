@@ -1,6 +1,8 @@
 from decimal import Decimal
+from typing import TYPE_CHECKING
 
-from TransactionLog import TransactionLog
+if TYPE_CHECKING:
+    from TransactionLog import TransactionLog
 from Transaction import Transaction
 from BankAccount import BankAccount
 
@@ -59,30 +61,15 @@ class FileHandler:
         if len(line) < 37:
             raise ValueError("line too short")
         acc_num = line[0:5]                                             # 5-digit account number
-        name = ' '.join(line[6:26].rstrip(' ').split(" ")).lower()      # Account name
-        status = line[29]                                               # Active status
-        balance = Decimal(line[30:37].lstrip('0'))                      # Balance
+        name = line[6:26].rstrip().lower()                              # Account name (20 chars)
+        status = line[27]                                               # Active status (A/D)
+        balance_str = line[29:37]                                       # Balance (8 chars)
+        # Parse balance, handling leading zeros
+        balance = Decimal(balance_str)
         return BankAccount(acc_num, name, balance, status)
 
     @staticmethod
-    def format_transaction(trn: Transaction) -> str:
-        """
-        Format a Transaction object into a 40‑character daily transaction record
-
-        :param trn: A Transaction object to record the transaction.
-        :return: A 40‑character string ready to be written to the daily file.
-        """
-
-        code = FileHandler.pad_left(trn.transaction_code, 2)
-        name = FileHandler.pad_right(trn.holders_name[:20], 20)
-        account_number = FileHandler.pad_left(trn.account_num, 5)
-        amount = FileHandler.format_amount(trn.balance)
-        misc = FileHandler.pad_right(trn.misc[:2], 2)
-
-        return f"{code} {name} {account_number} {amount} {misc}"
-
-    @staticmethod
-    def write_file(filename: str, trns: TransactionLog):
+    def write_file(filename: str, trns: 'TransactionLog'):
         """
         Write all transactions from a TransactionLog to the daily transaction file, followed by an end‑of‑session marker
         (code 00).
@@ -103,7 +90,7 @@ class FileHandler:
     def read_file(filename: str) -> list[BankAccount]:
         """
         Read the current bank accounts file and return a list of BankAccount objects. Stops reading when an account
-        with holder name "END_OF_FILE" is encountered.
+        with holder name "END_OF_FILE" or "end_of_file" is encountered.
 
         :param filename:Path to the output file.
         :return: List of accounts to read from file
@@ -112,7 +99,10 @@ class FileHandler:
         with open(filename, 'r') as file:
             for line in file:
                 line = line.rstrip('\n')
-                if line == "END_OF_FILE":
+                if not line:  # Skip empty lines
+                    continue
+                account = FileHandler.parse_account_line(line)
+                if account.holder_name.lower() == "end_of_file":
                     break
-                accounts.append(FileHandler.parse_account_line(line))
+                accounts.append(account)
         return accounts
