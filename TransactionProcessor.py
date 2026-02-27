@@ -210,6 +210,7 @@ class TransactionProcessor:
 
         # Display Success
         UserInterface.display_success(f"Account created successfully")
+        self.account_manager.new_accounts.append(new_account_num)
 
         return new_account_num
 
