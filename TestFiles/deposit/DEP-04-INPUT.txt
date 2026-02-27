@@ -1,0 +1,11 @@
+login
+admin
+deposit
+Bob Smith
+00001
+20
+withdrawal
+Bob Smith
+00001
+120
+logout

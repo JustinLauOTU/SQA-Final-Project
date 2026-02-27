@@ -158,7 +158,7 @@ class BankingSystem:
         account_holder = self._handle_account_name()
         account_number = self.ui.prompt_account_number()
         amount = self.ui.prompt_amount()
-        self.transaction_processor.deposit(account_number, amount)
+        self.transaction_processor.deposit(account_holder, account_number, amount)
 
     def _handle_create(self):
         """Get create input and call transaction_processor.create()."""

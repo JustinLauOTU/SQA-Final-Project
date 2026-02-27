@@ -2,4 +2,6 @@ login
 standard
 Bob Smith
 deposit
-12345
+00002
+300
+logout

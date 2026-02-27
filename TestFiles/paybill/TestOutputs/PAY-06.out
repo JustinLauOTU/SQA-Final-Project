@@ -1,1 +1,10 @@
-./TestFiles/TestScript.sh: line 35: python: command not found
+Welcome to the bank. Please type login: 
+Please enter a session type: 
+Enter account name: 
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, logout: 
+Enter account number: 
+Enter company code (EC/CQ/FI): 
+Error company code must be one of 'EC', 'CQ', 'FI'
+Enter company code (EC/CQ/FI): 
+
+Error: Unexpected end of input

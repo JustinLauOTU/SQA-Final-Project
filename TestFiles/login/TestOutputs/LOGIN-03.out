@@ -1,1 +1,6 @@
-./TestFiles/TestScript.sh: line 35: python: command not found
+Welcome to the bank. Please type login: 
+Please enter a session type: 
+Invalid session type
+Please enter a session type: 
+
+Error: Unexpected end of input

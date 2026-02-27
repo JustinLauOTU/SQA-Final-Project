@@ -1,1 +1,5 @@
-./TestFiles/TestScript.sh: line 35: python: command not found
+Welcome to the bank. Please type login: 
+Invalid command. Please type login.
+Welcome to the bank. Please type login: 
+
+Error: Unexpected end of input

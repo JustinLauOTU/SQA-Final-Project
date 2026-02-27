@@ -2,6 +2,6 @@ login
 admin
 deposit
 Bob Smith
-12345
+00001
 200
 logout

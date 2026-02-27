@@ -100,6 +100,7 @@ class TransactionProcessor:
 
         return True
 
+
     def transfer(self, from_account_num: str, to_account_num: str, amount: Decimal) -> bool:
         """
         Process a transfer between two accounts.
@@ -163,7 +164,7 @@ class TransactionProcessor:
 
         return True
 
-    def deposit(self, account_number: str, amount: Decimal) -> bool:
+    def deposit(self, account_holder: str, account_number: str, amount: Decimal) -> bool:
         """
         Process a deposit. According to requirements, deposit does **not** update the account balance immediately; it
         only logs the transaction (Still fixing that part).
@@ -175,7 +176,7 @@ class TransactionProcessor:
 
         # Finding account and validating
         account = self.find_current_user(account_number)
-        if not self.validate_transaction(account, 'Deposit', amount):
+        if not self.validate_transaction(account_holder, account_number, 'Deposit', amount):
             return False
 
         # Execute deposit

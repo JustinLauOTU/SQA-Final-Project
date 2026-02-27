@@ -1,1 +1,9 @@
-./TestFiles/TestScript.sh: line 35: python: command not found
+Welcome to the bank. Please type login: 
+Please enter a session type: 
+Enter account name: 
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, logout: 
+Enter account number: 
+Enter amount: 
+Account does not belong to you
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, logout: 
+Logout successful

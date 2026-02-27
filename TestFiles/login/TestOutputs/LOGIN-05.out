@@ -1,1 +1,15 @@
-./TestFiles/TestScript.sh: line 35: python: command not found
+Welcome to the bank. Please type login: 
+Please enter a session type: 
+Enter account name: 
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, logout: 
+Traceback (most recent call last):
+  File "/Users/ruthgeng/Desktop/SQA-Final-Project/BankingSystem.py", line 210, in <module>
+    main()
+    ~~~~^^
+  File "/Users/ruthgeng/Desktop/SQA-Final-Project/BankingSystem.py", line 207, in main
+    system.run()
+    ~~~~~~~~~~^^
+  File "/Users/ruthgeng/Desktop/SQA-Final-Project/BankingSystem.py", line 62, in run
+    getattr(self, self.COMMAND_HANDLERS[cmd])()
+                  ~~~~~~~~~~~~~~~~~~~~~^^^^^
+KeyError: 'login'

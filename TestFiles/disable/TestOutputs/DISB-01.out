@@ -1,1 +1,10 @@
-./TestFiles/TestScript.sh: line 35: python: command not found
+Welcome to the bank. Please type login: 
+Please enter a session type: 
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
+Invalid command
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
+Error transaction type must be alphanumeric
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
+Invalid command
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
+Logout successful

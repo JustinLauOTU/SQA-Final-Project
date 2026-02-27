@@ -11,6 +11,7 @@ class AccountsManager:
     def __init__(self):
         """Initialize an empty account dictionary"""
         self.accounts = {}
+        self.new_accounts = []
 
     def load_accounts(self, filename: str) -> bool:
         """
