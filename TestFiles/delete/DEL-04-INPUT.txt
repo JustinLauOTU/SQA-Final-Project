@@ -2,3 +2,5 @@ login
 admin
 delete
 Bob Dylan
+95067
+logout

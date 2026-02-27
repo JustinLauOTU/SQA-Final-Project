@@ -187,7 +187,7 @@ class BankingSystem:
         """Get changeplan input and call transaction_processor.changeplan()."""
         account_holder = self.ui.prompt_account_name()
         account_number = self.ui.prompt_account_number()
-        self.transaction_processor.change_plan(account_number)
+        self.transaction_processor.change_plan(account_holder, account_number)
 
 def main():
     """

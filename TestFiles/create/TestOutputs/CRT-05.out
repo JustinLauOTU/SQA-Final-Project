@@ -4,5 +4,7 @@ Please enter a command. Commands are withdrawal, transfer, paybill, deposit, cre
 Enter account name: 
 Account name must be between 1-20 characters long
 Enter account name: 
-
-Error: Unexpected end of input
+Enter amount: 
+Account created successfully
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
+Logout successful

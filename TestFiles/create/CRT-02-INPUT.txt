@@ -5,3 +5,6 @@ Jason So
 1000
 withdrawal
 Jason So
+00003
+200
+logout

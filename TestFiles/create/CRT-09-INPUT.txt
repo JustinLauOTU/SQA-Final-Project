@@ -2,5 +2,6 @@ login
 admin
 create
 Jason So
-00001
 " "
+30
+logout

@@ -2,5 +2,5 @@ login
 admin
 changeplan
 Bob Smith
-12345
+00001
 logout

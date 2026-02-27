@@ -2,3 +2,4 @@ login
 standard
 Bob Smith
 create
+logout

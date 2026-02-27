@@ -2,6 +2,5 @@ login
 admin
 create
 Jason So
-00001
 1000
 logout

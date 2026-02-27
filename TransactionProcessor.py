@@ -25,7 +25,7 @@ class TransactionProcessor:
         self.session = session
         self.trans_log = trans_log
 
-    def validate_transaction(self, account_holder: str, account_number: str, transaction_type: str, amount: Decimal) -> bool:
+    def validate_transaction(self, account_holder: str, account_number: str, transaction_type: str, amount: Decimal = None) -> bool:
         """
         Perform common validations for a transaction:
           - Account existence and active status.
@@ -39,6 +39,10 @@ class TransactionProcessor:
 
         :return: True if all checks pass, False otherwise.
         """
+        if account_number in self.account_manager.new_accounts:
+            UserInterface.display_error("Account cannot be used in this session")
+            return False
+
         account = self.find_current_user(account_number)
 
         # Checking existence, active, account is not another's and session is admin
@@ -201,6 +205,10 @@ class TransactionProcessor:
         :return: The new account number if successful, otherwise None.
         """
 
+        if self.account_manager.find_account_by_name(account_holder):
+            UserInterface.display_error(f"Account {account_holder} already exists")
+            return False
+
         # Generating new account number
         new_account_num = self.account_manager.generate_new_account_number()
 
@@ -226,7 +234,7 @@ class TransactionProcessor:
 
         # Finding account and validating
         account = self.find_current_user(account_number)
-        if not self.validate_transaction(account, 'Delete', None):
+        if not self.validate_transaction(account_holder, account_number, 'Delete', None):
             return False
 
         # Execute
@@ -268,34 +276,35 @@ class TransactionProcessor:
 
         return True
 
-    def change_plan(self, account_number: str,):
+    def change_plan(self, account_holder: str, account_number: str,):
         """
         Process changeplan transaction (admin only). Changes the account plan from student ('SP') to non‑student
         ('NP') and logs a 'changeplan' transaction.
 
+        :param account_holder: Account holder's name (for verification).
         :param account_number: The account whose plan is to be changed.
         :return: True if successful, False otherwise.
         """
 
         # Finding account and validating
         account = self.find_current_user(account_number)
-        if not self.validate_transaction(account, 'ChangePlan', Decimal('0.00')):
+        if not self.validate_transaction(account_holder, account_number, 'ChangePlan', Decimal('0.00')):
             return False
-        if not account.is_student():
+        elif not account.is_student():
             UserInterface.display_error(f"Account {account.holder_name} account is already on non-student account plan")
             return False
+        else:
+            # Execute
+            self.account_manager.change_plan(account_number)
 
-        # Execute
-        self.account_manager.change_plan(account_number)
+            # Log the transaction
+            trans_line = Transaction('08', account.holder_name, account_number, Decimal('0.00'), '')
+            self.trans_log.add_transaction(trans_line)
 
-        # Log the transaction
-        trans_line = Transaction('08', account.holder_name, account_number, Decimal('0.00'), '')
-        self.trans_log.add_transaction(trans_line)
+            # Display Success
+            UserInterface.display_success(f"Account plan changed successfully")
 
-        # Display Success
-        UserInterface.display_success(f"Account plan changed successfully")
-
-        return True
+            return True
 
     @staticmethod
     def _sufficient_funds(account:BankAccount, amount: Decimal) -> bool:

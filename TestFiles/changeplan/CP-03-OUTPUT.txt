@@ -1,5 +1,8 @@
 Welcome to the bank. Please type login: 
 Please enter a session type: 
 Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
-Enter the account name: 
-Account does not exist
+Enter account name: 
+Enter account number: 
+Account not found
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
+Logout successful

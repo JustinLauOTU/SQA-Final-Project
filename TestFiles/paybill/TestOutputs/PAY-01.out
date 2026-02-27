@@ -5,20 +5,6 @@ Please enter a command. Commands are withdrawal, transfer, paybill, deposit, log
 Enter account number: 
 Enter company code (EC/CQ/FI): 
 Enter amount: 
-Traceback (most recent call last):
-  File "/Users/ruthgeng/Desktop/SQA-Final-Project/BankingSystem.py", line 210, in <module>
-    main()
-    ~~~~^^
-  File "/Users/ruthgeng/Desktop/SQA-Final-Project/BankingSystem.py", line 207, in main
-    system.run()
-    ~~~~~~~~~~^^
-  File "/Users/ruthgeng/Desktop/SQA-Final-Project/BankingSystem.py", line 62, in run
-    getattr(self, self.COMMAND_HANDLERS[cmd])()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/Users/ruthgeng/Desktop/SQA-Final-Project/BankingSystem.py", line 154, in _handle_paybill
-    self.transaction_processor.paybill(account_number, company, amount)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/ruthgeng/Desktop/SQA-Final-Project/TransactionProcessor.py", line 151, in paybill
-    if not self.validate_transaction(account, 'PayBill', amount):
-           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: TransactionProcessor.validate_transaction() missing 1 required positional argument: 'amount'
+Account not found
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, logout: 
+Logout successful

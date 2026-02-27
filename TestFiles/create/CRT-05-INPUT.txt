@@ -2,3 +2,6 @@ login
 admin
 create
 Bartholomew Johansson
+Zoe Al
+200
+logout

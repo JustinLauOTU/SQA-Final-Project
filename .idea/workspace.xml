@@ -4,11 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca84123c-44c7-41a0-aff2-5e2d3921713c" name="Changes" comment="" />
+    <list default="true" id="ca84123c-44c7-41a0-aff2-5e2d3921713c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_tests.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_all.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/CP-01-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/CP-02-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/CP-03-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/CP-04-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/CRT-01-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/CRT-02-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/CRT-03-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/CRT-04-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/CRT-05-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/CRT-06-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/CRT-07-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/CRT-08-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/CRT-09-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/DEL-01-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/DEL-02-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/DEL-03-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/DEL-04-INPUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/inputs/DEL-05-INPUT.txt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="repository" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -17,12 +45,31 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ruthgeng1&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JustinLauOTU/SQA-Final-Project.git&quot;,
+    &quot;accountId&quot;: &quot;3ff1262d-e78d-4c7e-a5f7-dc6384dc99bd&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="39bTrPIU4jB8lb0cIc8kD3NDapR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,24 +81,42 @@
     "Python.BankingSystem.executor": "Run",
     "Python.main.executor": "Run",
     "Python.test.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SHELLCHECK.PATH": "/Users/ruthgeng/Library/Application Support/JetBrains/PyCharm2025.3/plugins/Shell Script/shellcheck",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "pending-updates",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/ruthgeng/Desktop/Phase2",
+    "last_opened_file_path": "/Users/ruthgeng/Desktop/SQA-Final-Project/TestFiles/deposit",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.fileTypes",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/TestFiles/deposit" />
+      <recent name="$PROJECT_DIR$/TestFiles/changeplan" />
+      <recent name="$PROJECT_DIR$/TestFiles/delete" />
+      <recent name="$PROJECT_DIR$/TestFiles/create" />
+      <recent name="$PROJECT_DIR$/TestFiles/create/TestOutputs" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test">
@@ -150,11 +215,24 @@
       <option name="presentableId" value="Default" />
       <updated>1770963968902</updated>
       <workItem from="1770963970092" duration="42988000" />
+      <workItem from="1772210414766" duration="7907000" />
+      <workItem from="1772218433322" duration="10861000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Phase2$BankingSystem.coverage" NAME="BankingSystem Coverage Results" MODIFIED="1771019058543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

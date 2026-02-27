@@ -1,7 +1,9 @@
 login
 admin
 delete
-Jason So
+Bob Smith
 00001
-withdrawal
-Jason So
+changeplan
+Bob Smith
+00001
+logout

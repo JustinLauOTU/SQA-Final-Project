@@ -2,4 +2,5 @@ login
 admin
 changeplan
 Bob Smith
-99999
+00002
+logout
