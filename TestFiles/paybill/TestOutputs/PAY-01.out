@@ -5,6 +5,6 @@ Please enter a command. Commands are withdrawal, transfer, paybill, deposit, log
 Enter account number: 
 Enter company code (EC/CQ/FI): 
 Enter amount: 
-Account not found
+Bills paid successfully
 Please enter a command. Commands are withdrawal, transfer, paybill, deposit, logout: 
 Logout successful

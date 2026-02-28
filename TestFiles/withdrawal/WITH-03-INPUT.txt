@@ -1,6 +1,7 @@
 login
 standard
-Bob Smith
+Henry Smith
 withdrawal
-12345
+00003
 400
+logout

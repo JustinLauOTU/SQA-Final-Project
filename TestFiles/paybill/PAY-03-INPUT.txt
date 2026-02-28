@@ -1,7 +1,8 @@
 login
 standard
-Bob Smith
+Henry Smith
 paybill
-12345
+00003
 FI
 300
+logout

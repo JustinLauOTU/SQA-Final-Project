@@ -4,6 +4,6 @@ Please enter a command. Commands are withdrawal, transfer, paybill, deposit, cre
 Enter account name: 
 Enter account number: 
 Enter amount: 
-Account not found
+Withdrawal successful
 Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
 Logout successful

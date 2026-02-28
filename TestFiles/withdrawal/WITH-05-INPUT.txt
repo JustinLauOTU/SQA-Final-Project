@@ -2,5 +2,7 @@ login
 standard
 Bob Smith
 withdrawal
-12345
+00001
 -1
+50
+logout

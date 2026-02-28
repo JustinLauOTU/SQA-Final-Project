@@ -7,5 +7,6 @@ Enter company code (EC/CQ/FI):
 Enter amount: 
 Error amount must be a valid positive number
 Enter amount: 
-
-Error: Unexpected end of input
+Bills paid successfully
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
+Logout successful

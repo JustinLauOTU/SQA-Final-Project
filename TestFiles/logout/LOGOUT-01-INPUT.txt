@@ -1,1 +1,4 @@
 logout
+login
+admin
+logout

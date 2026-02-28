@@ -1,9 +1,8 @@
 Welcome to the bank. Please type login: 
 Please enter a session type: 
 Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
-Invalid command
+Enter account name: 
+Enter account number: 
+Account not found
 Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
-Error transaction type must be alphanumeric
-Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
-
-Error: Unexpected end of input
+Logout successful

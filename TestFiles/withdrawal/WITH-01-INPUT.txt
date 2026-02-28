@@ -1,7 +1,7 @@
 login
 standard
-Bob Smith
+Andy Law
 withdrawal
-12345
+00004
 250
 logout

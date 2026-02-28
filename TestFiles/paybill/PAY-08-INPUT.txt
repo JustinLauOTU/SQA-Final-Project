@@ -2,6 +2,8 @@ login
 admin
 paybill
 Bob Smith
-12345
+00001
 FI
 ABC
+100
+logout

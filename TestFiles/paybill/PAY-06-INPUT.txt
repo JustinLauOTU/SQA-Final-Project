@@ -2,5 +2,9 @@ login
 standard
 Bob Smith
 paybill
-12345
-DO
+00001
+KJ
+EC
+300
+logout
+

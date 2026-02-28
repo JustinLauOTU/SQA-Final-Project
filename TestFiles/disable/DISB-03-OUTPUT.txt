@@ -1,9 +1,13 @@
 Welcome to the bank. Please type login: 
 Please enter a session type: 
 Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
-Enter the account name: 
+Enter account name: 
 Enter account number: 
 Account disabled successfully
 Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
-Enter the account name: 
+Enter account name: 
+Enter account number: 
+Enter amount: 
 Account is disabled. Please re-enable account to make transactions
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
+Logout successful

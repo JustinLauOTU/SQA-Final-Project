@@ -32,7 +32,8 @@ for i in "$SCRIPT_DIR"/*/; do
         #   - Give program two file names (current_bank_account file and output transaction file path)
         #   - Give inputs from file as stdin
         #   - Send everything the program outputs into the specific .out file
-        python3 "$PYTHON_SCRIPT" "$ACCOUNTS_FILE" "TestOutputs/$base.atf" < "$x" > "TestOutputs/$base.out" 2>&1
+        python "$PYTHON_SCRIPT" "$ACCOUNTS_FILE" "TestOutputs/$base.atf" < "$x" 2>&1 \
+        | sed 's/\r$//' > "TestOutputs/$base.out"
     done
 
     # Return to original script dir before processing to next subfolder

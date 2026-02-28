@@ -39,6 +39,7 @@ class TransactionProcessor:
 
         :return: True if all checks pass, False otherwise.
         """
+
         if account_number in self.account_manager.new_accounts:
             UserInterface.display_error("Account cannot be used in this session")
             return False
@@ -157,12 +158,12 @@ class TransactionProcessor:
 
         # Finding account and validating
         account = self.find_current_user(account_number)
-        if not self.validate_transaction(account_holder, account_number, 'PayBill', amount):
+        if not self.validate_transaction(account_holder, account_number, 'Paybill', amount):
             return False
 
         # Execute paybill
         self.account_manager.debit(account, amount)
-        self.session.session_limit('paybill', amount)
+        self.session.session_limit('Paybill', amount)
 
         # Log the transaction
         trans_line = Transaction('03', account_holder, account_number,amount, company)

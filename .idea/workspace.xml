@@ -92,7 +92,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "pending-updates",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/ruthgeng/Desktop/SQA-Final-Project/TestFiles/deposit",
+    "last_opened_file_path": "/Users/ruthgeng/Desktop/SQA-Final-Project/TestFiles/login",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -112,11 +112,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/TestFiles/deposit" />
-      <recent name="$PROJECT_DIR$/TestFiles/changeplan" />
-      <recent name="$PROJECT_DIR$/TestFiles/delete" />
-      <recent name="$PROJECT_DIR$/TestFiles/create" />
-      <recent name="$PROJECT_DIR$/TestFiles/create/TestOutputs" />
+      <recent name="$PROJECT_DIR$/TestFiles/login" />
+      <recent name="$PROJECT_DIR$/TestFiles/paybill" />
+      <recent name="$PROJECT_DIR$/TestFiles/disable" />
+      <recent name="$PROJECT_DIR$/TestFiles/withdrawal" />
+      <recent name="$PROJECT_DIR$/TestFiles/transfer" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test">
@@ -216,7 +216,7 @@
       <updated>1770963968902</updated>
       <workItem from="1770963970092" duration="42988000" />
       <workItem from="1772210414766" duration="7907000" />
-      <workItem from="1772218433322" duration="12189000" />
+      <workItem from="1772218433322" duration="21252000" />
     </task>
     <servers />
   </component>

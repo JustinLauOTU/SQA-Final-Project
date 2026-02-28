@@ -1,4 +1,5 @@
 00001 Bob Smith            A 20000.00
 00002 Jane Smith           A 00250.00
 00003 Henry Smith          A 00020.00
-00004 END_OF_FILE          A 00000.00
+00004 Andy Law             A 01100.00
+00005 END_OF_FILE          A 00000.00

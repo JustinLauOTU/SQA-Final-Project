@@ -1,2 +1,6 @@
 login
 admin
+delete
+Bob Smith
+00001
+logout

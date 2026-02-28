@@ -1,2 +1,4 @@
 login
 special
+admin
+logout

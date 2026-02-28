@@ -1,3 +1,6 @@
 Welcome to the bank. Please type login: 
-Invalid command
+Invalid command. Please type login.
 Welcome to the bank. Please type login: 
+Please enter a session type: 
+Please enter a command. Commands are withdrawal, transfer, paybill, deposit, create, delete, disable, changeplan, logout: 
+Logout successful

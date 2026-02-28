@@ -1,5 +1,6 @@
 login
 admin
 disable
-Bob Dylan
-12345
+Bob Smith
+00002
+logout

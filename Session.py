@@ -2,7 +2,7 @@ from decimal import Decimal
 
 # Allowed commands for each session mode
 COMMANDS_BY_MODE = {
-    'admin': {'withdrawal', 'deposit', 'paybill', 'transfer', 'login', 'logout', 'create', 'delete', 'changeplan'},
+    'admin': {'withdrawal', 'deposit', 'paybill', 'transfer', 'login', 'logout', 'create', 'delete', 'changeplan', 'disable'},
     'standard': {'withdrawal', 'deposit', 'paybill', 'transfer', 'login', 'logout', }
 }
 

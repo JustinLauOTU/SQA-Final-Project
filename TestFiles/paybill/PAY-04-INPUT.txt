@@ -1,8 +1,8 @@
 login
-standard
-Bob Smith
+admin
 paybill
 Bob Smith
-12345
+00001
 FI
-200
+2001
+logout

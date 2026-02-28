@@ -1,7 +1,10 @@
 login
 admin
 disable
-Jason So
+Bob Smith
 00001
 withdrawal
-Jason So
+Bob Smith
+00001
+10
+logout
