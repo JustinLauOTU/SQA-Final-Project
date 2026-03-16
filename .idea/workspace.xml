@@ -90,9 +90,9 @@
     "SHELLCHECK.PATH": "/Users/ruthgeng/Library/Application Support/JetBrains/PyCharm2025.3/plugins/Shell Script/shellcheck",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "pending-updates",
+    "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/ruthgeng/Desktop/SQA-Final-Project/TestFiles/login",
+    "last_opened_file_path": "/Users/ruthgeng/Desktop/SQA-Final-Project/TestFiles/transfer",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -112,11 +112,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/TestFiles/transfer" />
       <recent name="$PROJECT_DIR$/TestFiles/login" />
       <recent name="$PROJECT_DIR$/TestFiles/paybill" />
       <recent name="$PROJECT_DIR$/TestFiles/disable" />
       <recent name="$PROJECT_DIR$/TestFiles/withdrawal" />
-      <recent name="$PROJECT_DIR$/TestFiles/transfer" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Backend" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test">
@@ -202,7 +205,6 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.30387.173" />
         <option value="bundled-python-sdk-4762d8aabb82-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.30387.173" />
       </set>
     </attachedChunks>

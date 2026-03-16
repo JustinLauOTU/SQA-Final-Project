@@ -135,8 +135,12 @@ class TransactionProcessor:
         self.account_manager.credit(to_account, amount)
         self.session.session_limit('transfer', amount)
 
-        # Log the transaction
-        trans_line = Transaction('02', from_account.holder_name, from_account_num,amount, '')
+        # Log the transfer transaction (debit) from the source
+        trans_line = Transaction('02', from_account.holder_name, from_account_num, amount, '')
+        self.trans_log.add_transaction(trans_line)
+
+        # Log the credit to the destination (deposit)
+        trans_line = Transaction('04', to_account.holder_name, to_account_num, amount, '')
         self.trans_log.add_transaction(trans_line)
 
         # Display Success
