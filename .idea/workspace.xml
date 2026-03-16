@@ -90,15 +90,15 @@
     "SHELLCHECK.PATH": "/Users/ruthgeng/Library/Application Support/JetBrains/PyCharm2025.3/plugins/Shell Script/shellcheck",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "pending-updates",
+    "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/ruthgeng/Desktop/SQA-Final-Project/TestFiles/login",
+    "last_opened_file_path": "/Users/ruthgeng/Desktop/SQA-Final-Project/TestFiles/transfer",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
+    "settings.editor.selected.configurable": "terminal",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   },
@@ -112,11 +112,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/TestFiles/transfer" />
       <recent name="$PROJECT_DIR$/TestFiles/login" />
       <recent name="$PROJECT_DIR$/TestFiles/paybill" />
       <recent name="$PROJECT_DIR$/TestFiles/disable" />
       <recent name="$PROJECT_DIR$/TestFiles/withdrawal" />
-      <recent name="$PROJECT_DIR$/TestFiles/transfer" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test">
@@ -233,6 +233,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Phase2$BankingSystem.coverage" NAME="BankingSystem Coverage Results" MODIFIED="1771019058543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
