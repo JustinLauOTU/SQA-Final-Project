@@ -1,4 +1,4 @@
-00001 Bob Smith            A 19800.00 0004 
+00001 Bob Smith            A 19799.90 0004 
 00002 Jane Smith           A 00450.00 0003 
 00004 Andy Law             D 01100.00 0003 
 00005 david situ           A 00300.00 0000 

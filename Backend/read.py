@@ -118,10 +118,12 @@ def read_transactions(file_path):
     return transactions
 
 #This function deducts the service fee for each transaction from an account based on plan type
-def _deduct_service_fee(account, transaction_code):
+def _deduct_service_fee(account, transaction_code, funds_involved):
     
     fee = STUDENT_FEE if account['plan'] == 'SP' else NON_STUDENT_FEE
-    account['balance'] -= round(account['balance'] - fee, 2)
+    total_cost = funds_involved + fee
+    if total_cost < account['balance']:
+        account['balance'] = round(account['balance'] - (total_cost), 2)
     
     if account['balance'] < 0:
         print_error.log_constraint_error(
@@ -138,7 +140,8 @@ def apply_transactions(accounts, transactions):
             case '01': #subtracts from account owners balance
                 for y in accounts:
                     if y['account_number'] == x['account_number']:
-                        y['balance'] -= x['funds_involved']
+                        _deduct_service_fee(y, x['transaction_code'], x['funds_involved'])
+                        # y['balance'] -= x['funds_involved']
                         y['total_transactions'] += 1
                         break
             case '02': #subtracts from account owners balance
@@ -160,14 +163,17 @@ def apply_transactions(accounts, transactions):
                         y['total_transactions'] += 1
                         break
             case '05': #creates a new account and adds it to the account list
-                accounts.append({
-                    'account_number': x['account_number'],
-                    'name': x['name'],
-                    'status': 'A',
-                    'balance': x['funds_involved'],
-                    'total_transactions': 0,
-                    'plan': 'SP'}
-                )
+                if any(y['account_number'] == x['account_number'] for y in accounts):
+                    print(f"ERROR: account already exists")
+                else:
+                    accounts.append({
+                        'account_number': x['account_number'],
+                        'name': x['name'],
+                        'status': 'A',
+                        'balance': x['funds_involved'],
+                        'total_transactions': 0,
+                        'plan': 'SP'}
+                    )
             case '06': #removes an account from the list
                 index = None
                 for y in accounts:
